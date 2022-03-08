@@ -1,0 +1,21 @@
+<div id="<%= dom_id caption %>">
+  <p>
+    <strong>Text:</strong>
+    <%= caption.text %>
+  </p>
+
+  <p>
+    <strong>Timestamp:</strong>
+    <%= caption.timestamp %>
+  </p>
+
+  <p>
+    <strong>Video:</strong>
+    <%= caption.video_id %>
+  </p>
+
+  <iframe id="ytplayer_<%= caption.video.web_id %>" type="text/html"
+  src="https://www.youtube.com/embed/<%= caption.video.web_id %>?start=<%= caption.timestamp.to_i %>&origin=localhost&cc_load_policy=1"
+  frameborder="0"></iframe>
+
+</div>
