@@ -6,7 +6,7 @@ class CaptionsController < ApplicationController
     if params[:query] and (params[:query] != '')
       @captions = Caption.where("lower(text) LIKE ?", "%" + params[:query].downcase + "%").reverse_order#.limit(16)
     else
-      @captions = Caption.all.limit(16).reverse_order
+      @captions = Caption.all.reverse_order.limit(512)
     end
   end
 
