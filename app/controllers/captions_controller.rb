@@ -4,7 +4,7 @@ class CaptionsController < ApplicationController
   # GET /captions or /captions.json
   def index
     if params[:query] and (params[:query] != '')
-      @captions = Caption.where("lower(text) LIKE ?", "%" + params[:query].downcase + "%").reverse_order#.limit(16)
+      @captions = Caption.query(params[:query].downcase).reverse_order#.limit(16)
     else
       @captions = Caption.all.reverse_order.limit(512)
     end
