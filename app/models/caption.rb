@@ -9,6 +9,6 @@ class Caption < ApplicationRecord
         "%#{word.downcase}%"
     end
 
-    where( search_sql.join(' and '), *words )
+    where( search_sql.join(' or '), *words )
   }
 end
